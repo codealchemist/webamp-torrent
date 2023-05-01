@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Webamp+WebTorrent</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
+    />
+
+    <!-- OPEN GRAPH: Start -->
+    <!-- Search Engine -->
+    <meta name="description" content="Webamp+WebTorrent media player." />
+    <meta name="image" content="https://webamp-torrent.netlify.app" />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Webamp+WebTorrent media player" />
+    <meta
+      itemprop="description"
+      content="Play audio files from WebTorrent in Webamp"
+    />
+    <meta itemprop="image" content="https://webamp-torrent.netlify.app" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Webamp+WebTorrent media player" />
+    <meta
+      name="og:description"
+      content="Play audio files from a torrent in Webamp"
+    />
+    <meta name="og:image" content="https://webamp-torrent.netlify.app/logo.png" />
+    <meta name="og:url" content="https://webamp-torrent.netlify.app" />
+    <meta name="og:site_name" content="Webamp+WebTorrent media player" />
+    <meta name="og:type" content="website" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://webamp-torrent.netlify.app" />
+    <meta property="twitter:title" content="Webamp+WebTorrent media player" />
+    <meta
+      property="twitter:description"
+      content="Play audio files from a torrent in Webamp"
+    />
+    <meta
+      property="twitter:image"
+      content="https://webamp-torrent.netlify.app/logo.png"
+    />
+    <!-- OPEN GRAPH: End -->
+
+    <!-- Icons start -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://webamp-torrent.netlify.app/icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://webamp-torrent.netlify.app/icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://webamp-torrent.netlify.app/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://webamp-torrent.netlify.app/icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://webamp-torrent.netlify.app/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="https://webamp-torrent.netlify.app/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://webamp-torrent.netlify.app/icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Icons end -->
+
+    <!-- Fonts: Start -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fonts: End -->
+
+    <meta name="description" content="Play audio files from a torrent in Webamp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div id="app">
+      <div id="loading"></div>
+      <a id="webtorrent-logo" href="https://webtorrent.io" target="_blank">
+        <img src="../public/webtorrent-logo.png" />
+      </a>
+      <div id="input-container">
+        <input
+          id="cid"
+          type="text"
+          placeholder="Paste magnet link here"
+          autofocus
+        />
+      </div>
+
+      <div id="container">
+        <div id="content">
+          <div id="winamp-container"></div>
+        </div>
+        <div id="iframe-container">
+          <iframe id="inline-content" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div id="background"></div>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
